@@ -18,21 +18,31 @@ function education_zone_add_sidebar_layout_box(){
     ); 
 }
 
-$education_zone_sidebar_layout = array(         
-    'right-sidebar' => array(
-        'value' => 'right-sidebar',
-        'label' => __( 'Right sidebar (default)', 'education-zone' ),
-        'thumbnail' => get_template_directory_uri() . '/images/right-sidebar.png'
-    ),
-    'no-sidebar' => array(
-        'value'     => 'no-sidebar',
-        'label'     => __( 'No sidebar', 'education-zone' ),
-        'thumbnail' => get_template_directory_uri() . '/images/no-sidebar.png'
-    )
-);
+/**
+ * Get Sidebar Layout Data
+ *
+ * @return array
+ */
+if( ! function_exists( 'education_zone_get_sidebar_layout_data' ) ){
+    function education_zone_get_sidebar_layout_data(){
+        return array(
+                'right-sidebar' => array(
+                'value' => 'right-sidebar',
+                'label' => __( 'Right sidebar (default)', 'education-zone' ),
+                'thumbnail' => get_template_directory_uri() . '/images/right-sidebar.png'
+            ),
+            'no-sidebar' => array(
+                'value'     => 'no-sidebar',
+                'label'     => __( 'No sidebar', 'education-zone' ),
+                'thumbnail' => get_template_directory_uri() . '/images/no-sidebar.png'
+            )
+        );
+    }
+}
 
 function education_zone_sidebar_layout_callback(){
-    global $post , $education_zone_sidebar_layout;
+    global $post; 
+    $education_zone_sidebar_layout = education_zone_get_sidebar_layout_data();
     wp_nonce_field( basename( __FILE__ ), 'education_zone_sidebar_layout_nonce' ); 
 ?>
 <table class="form-table">
@@ -66,7 +76,8 @@ function education_zone_sidebar_layout_callback(){
  * @hooked to save_post hook
  */
 function education_zone_save_sidebar_layout( $post_id ) { 
-    global $education_zone_sidebar_layout; 
+    $education_zone_sidebar_layout = education_zone_get_sidebar_layout_data();
+
 
     // Verify the nonce before proceeding.
     if ( !isset( $_POST[ 'education_zone_sidebar_layout_nonce' ] ) || !wp_verify_nonce( $_POST[ 'education_zone_sidebar_layout_nonce' ], basename( __FILE__ ) ) )

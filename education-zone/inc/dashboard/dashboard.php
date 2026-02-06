@@ -84,7 +84,6 @@ function education_zone_dashboard_scripts() {
                 'custom_logo'        => esc_url( admin_url( 'customize.php?autofocus[control]=custom_logo' ) ),
                 'colors'             => esc_url( admin_url( 'customize.php?autofocus[section]=colors' ) ),
                 'layout'             => esc_url( admin_url( 'customize.php?autofocus[panel]=layout_settings' ) ),
-                'front'              => esc_url( admin_url( 'customize.php?autofocus[panel]=front_page_settings' ) ),
                 'general'            => esc_url( admin_url( 'customize.php?autofocus[panel]=general_settings' ) ),
                 'frontpage'          => esc_url( admin_url( 'customize.php?autofocus[panel]=frontpage_settings' ) ),
                 'footer'             => esc_url( admin_url( 'customize.php?autofocus[section]=footer_settings' ) ),

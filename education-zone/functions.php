@@ -261,7 +261,7 @@ function education_zone_customize_scripts() {
 	$array = array(
 		'ajax_url'   => admin_url( 'admin-ajax.php' ),
 		'flushit'    => __( 'Successfully Flushed!','education-zone' ),
-		'nonce'      => wp_create_nonce('ajax-nonce')
+		'nonce'      => wp_create_nonce('education_zone_flush_fonts_nonce')
 	);
 	wp_enqueue_style( 'education-zone-customize-style',get_template_directory_uri().'/inc/css/customize.css', '', EDUCATION_ZONE_THEME_VERSION );
 	wp_enqueue_script( 'education-zone-customize-js', get_template_directory_uri().'/inc/js/customize.js', array( 'jquery' ), EDUCATION_ZONE_THEME_VERSION, true );

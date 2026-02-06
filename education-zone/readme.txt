@@ -3,8 +3,8 @@
 Contributors: raratheme
 Requires at least: 6.2
 Requires PHP: 7.4
-Tested up to: 6.6
-Stable tag: 1.3.8
+Tested up to: 6.9
+Stable tag: 1.3.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, two-columns, right-sidebar, footer-widgets, custom-background, custom-menu, featured-images, threaded-comments, translation-ready, full-width-template, education, theme-options, custom-logo, e-commerce, one-column, post-formats
@@ -112,6 +112,9 @@ Some codes are taken from https://blog.josemcastaneda.com/2016/08/08/copy-paste-
 Some codes are taken from Twenty Twenty theme - https://wordpress.org/themes/twentytwenty/
 
 == Changelog ==
+
+    1.3.9 - Feb 04, 2026
+    * Fix: Security issues to Broken Access Control
 
     1.3.8 - August 08, 2024
     * Update: New dashboard has been implemented for better user experience.
